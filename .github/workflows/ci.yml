@@ -1,0 +1,33 @@
+name: CI MicroPassos
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Copiando os arquivos do repositório
+      uses: actions/checkout@v4
+
+    - name: Preparando o ambiente Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    - name: Instalando as dependências
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Verificação de Qualidade (Flake8)
+      run: |
+        flake8 src/ main.py tests/
+
+    - name: Rodando os Testes (Pytest)
+      run: |
+        pytest tests/
