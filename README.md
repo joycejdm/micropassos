@@ -33,8 +33,7 @@ O **MicroPassos** é uma aplicação simples de interface em Linha de Comando (C
 
 1. **Clone o repositório:**
    ```bash
-   git clone <COLOQUE_AQUI_O_LINK_DO_SEU_GITHUB>
-   cd micropassos
+   git clone git@github.com:joycejdm/micropassos.git
    ```
 
 2. **Crie e ative o ambiente virtual:**
