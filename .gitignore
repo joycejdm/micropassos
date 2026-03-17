@@ -1,0 +1,21 @@
+# Ambientes Virtuais
+venv/
+env/
+.venv/
+
+# Arquivos compilados do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Cache do Pytest (Testes)
+.pytest_cache/
+
+# Arquivo de dados local (Para não enviar suas tarefas pessoais pro GitHub)
+data.json
+test_data.json
+
+# Arquivos de sistema operacional (Mac/Windows)
+.DS_Store
+Thumbs.db
