@@ -75,4 +75,4 @@ Este projeto utiliza ferramentas de qualidade de código. Para as executar, gara
 
 Este projeto utiliza [Versionamento Semântico](https://semver.org/).
 
-Versão atual: 1.0.0 
+Versão atual: 1.1.0 
