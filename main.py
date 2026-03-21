@@ -1,15 +1,22 @@
 from src.tracker import TaskTracker
+from rich.console import Console
+from rich.table import Table
+from rich.panel import Panel
+
+console = Console()
 
 
 def exibir_menu():
-    print("\n" + "=" * 40)
-    print("🧠 MicroPassos - Foco no Agora")
-    print("=" * 40)
-    print("1. Adicionar nova tarefa com micro-passos")
-    print("2. Listar tarefas e progresso")
-    print("3. Concluir um micro-passo")
-    print("0. Sair")
-    return input("Escolha uma opção: ")
+    painel = Panel.fit(
+        "🧠 [bold cyan]MicroPassos[/bold cyan] - Foco no Agora",
+        border_style="cyan"
+    )
+    console.print(painel)
+    console.print("1. [green]Adicionar[/green] tarefa com micro-passos")
+    console.print("2. [blue]Listar[/blue] tarefas e progresso")
+    console.print("3. [magenta]Concluir[/magenta] um micro-passo")
+    console.print("0. [red]Sair[/red]")
+    return console.input("\n[bold]Escolha uma opção:[/bold] ")
 
 
 def main():
@@ -19,43 +26,62 @@ def main():
         opcao = exibir_menu()
 
         if opcao == '1':
-            nome = input("Qual a grande tarefa? (ex: Estudar): ")
-            passos_str = input("Micro-passos (separados por vírgula): ")
+            nome = console.input("[yellow]Qual a grande tarefa?[/yellow] ")
+            txt_p = "[yellow]Passos (separar por vírgula):[/yellow] "
+            passos_str = console.input(txt_p)
             passos = [p.strip() for p in passos_str.split(",") if p.strip()]
 
             try:
                 tracker.add_task(nome, passos)
-                print("✅ Tarefa e micro-passos adicionados com sucesso!")
+                msg = "[bold green]✅ Tarefa adicionada![/bold green]\n"
+                console.print(msg)
             except ValueError as e:
-                print(f"❌ Erro: {e}")
+                console.print(f"[bold red]❌ Erro: {e}[/bold red]\n")
 
         elif opcao == '2':
             tarefas = tracker.get_tasks()
             if not tarefas:
-                print("📭 Nenhuma tarefa cadastrada no momento.")
+                console.print("[bold red]📭 Nenhuma tarefa.[/bold red]\n")
+                continue
 
             for t in tarefas:
                 progresso = tracker.get_progress(t['id'])
-                info_tarefa = f"\n[{t['id']}] {t['name']}"
-                print(f"{info_tarefa} - Progresso: {progresso:.1f}%")
+                titulo = f"[{t['id']}] {t['name']} ({progresso:.1f}%)"
+
+                tabela = Table(title=titulo, title_style="bold cyan")
+                tabela.add_column("Nº", justify="center", style="cyan")
+                tabela.add_column("Status", justify="center")
+                tabela.add_column("Descrição", style="white")
+
                 for i, passo in enumerate(t['steps']):
-                    status = "[X]" if passo['completed'] else "[ ]"
-                    print(f"   {i}. {status} {passo['description']}")
+                    if passo['completed']:
+                        status = "[green]✅[/green]"
+                    else:
+                        status = "[red]❌[/red]"
+                    tabela.add_row(str(i), status, passo['description'])
+
+                console.print(tabela)
+                console.print()
 
         elif opcao == '3':
             try:
-                task_id = int(input("Digite o ID da tarefa (número): "))
-                step_idx = int(input("Digite o número do passo: "))
-                tracker.complete_step(task_id, step_idx)
-                print("🎉 Excelente! Micro-passo concluído!")
+                txt_id = "Digite o [cyan]ID da tarefa[/cyan]: "
+                t_id = int(console.input(txt_id))
+
+                txt_passo = "Digite o [cyan]Nº do passo[/cyan]: "
+                p_idx = int(console.input(txt_passo))
+
+                tracker.complete_step(t_id, p_idx)
+                msg_ok = "[bold green]🎉 Passo concluído![/bold green]\n"
+                console.print(msg_ok)
             except (ValueError, KeyError, IndexError) as e:
-                print(f"❌ Erro: Verifique os números. Detalhe: {e}")
+                console.print(f"[bold red]❌ Erro: {e}[/bold red]\n")
 
         elif opcao == '0':
-            print("Até logo! Mantenha o foco.")
+            console.print("[bold cyan]Até logo! Mantenha o foco.[/bold cyan]")
             break
         else:
-            print("❌ Opção inválida. Tente novamente.")
+            console.print("[bold red]❌ Opção inválida.[/bold red]\n")
 
 
 if __name__ == "__main__":
