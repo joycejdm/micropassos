@@ -4,7 +4,7 @@ from src.tracker import TaskTracker
 
 @pytest.fixture
 def tracker(tmp_path):
-    test_file = tmp_path / "test_data.json"
+    test_file = tmp_path / "test_data.db"
     return TaskTracker(filepath=str(test_file))
 
 

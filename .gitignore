@@ -19,3 +19,6 @@ test_data.json
 # Arquivos de sistema operacional (Mac/Windows)
 .DS_Store
 Thumbs.db
+
+# Bancos de dados locais
+*.db
