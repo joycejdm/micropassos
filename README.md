@@ -1,5 +1,7 @@
 # 🧠 MicroPassos
 
+![Demonstração do MicroPassos](demo.gif)
+
 ![Versão](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![Status](https://img.shields.io/badge/status-concluído-brightgreen.svg)
 
