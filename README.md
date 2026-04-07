@@ -1,28 +1,28 @@
-# 🧠 MicroPassos
+# MicroPassos
 
 ![Demonstração do MicroPassos](demo.gif)
 
 ![Versão](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![Status](https://img.shields.io/badge/status-concluído-brightgreen.svg)
 
-## 🎯 O Problema (Dor Real)
-Pessoas neurodivergentes (como pessoas com TDAH ou Autismo) e estudantes com dificuldades de rotina frequentemente sentem-se sobrecarregados ("paralisia de análise") ao enfrentar grandes tarefas. Aplicações de produtividade tradicionais são muitas vezes complexas e geram ansiedade. A dor real é a dificuldade em iniciar tarefas devido à falta de quebra de objetivos em etapas visíveis e digeríveis.
+## O Problema
+A sobrecarga cognitiva e a dificuldade em iniciar grandes tarefas são desafios reais, especialmente para pessoas neurodivergentes (como indivíduos com TDAH ou TEA) ou estudantes com dificuldades de organização. Aplicativos de produtividade tradicionais costumam apresentar interfaces complexas que geram ansiedade e resultam no que é conhecido como "paralisia de análise". A dor central é a falta de uma ferramenta direta para quebrar grandes objetivos em etapas menores e executáveis.
 
-## 💡 A Solução Proposta
-O **MicroPassos** é uma aplicação simples de interface em Linha de Comando (CLI) focada no "agora". Permite que o utilizador registe uma grande tarefa e a divida em micro-passos minúsculos. O sistema foca-se na conclusão individual de cada passo, calculando o progresso e proporcionando reforço positivo, diminuindo a carga mental.
+## A Solução 
+O MicroPassos é uma aplicação de Linha de Comando (CLI) desenvolvida para facilitar a execução de tarefas diárias. O sistema permite registrar uma atividade principal e dividi-la em micro-passos. O foco está na conclusão individual de cada etapa, calculando o progresso automaticamente para diminuir a carga mental e fornecer um indicativo visual de avanço.
 
-## 👥 Público-Alvo
+## Público-Alvo
 - Estudantes com TDAH ou dificuldade de concentração;
 - Pessoas neurodivergentes que necessitam de rotinas estruturadas;
 - Qualquer indivíduo que sofra de procrastinação por sobrecarga de tarefas.
 
-## ⚙️ Funcionalidades Principais
+## Funcionalidades Principais
 - Adicionar tarefas divididas em micro-passos;
 - Visualizar o progresso em percentagem (%);
 - Concluir micro-passos individualmente;
 - Armazenamento local leve via ficheiro JSON.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 - **Python 3** (Linguagem base)
 - **JSON** (Armazenamento de dados nativo)
 - **Pytest** (Testes automatizados)
@@ -31,7 +31,7 @@ O **MicroPassos** é uma aplicação simples de interface em Linha de Comando (C
 
 ---
 
-## 🚀 Como Instalar e Executar
+## Como Instalar e Executar
 
 1. **Clone o repositório:**
    ```bash
@@ -71,7 +71,7 @@ Este projeto utiliza ferramentas de qualidade de código. Para as executar, gara
     flake8 src/ main.py tests/
    ```
 
-## 📦 Versionamento
+## Versionamento
 
 Este projeto utiliza [Versionamento Semântico](https://semver.org/).
 
