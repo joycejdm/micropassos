@@ -75,11 +75,11 @@ def main():
                 tracker.complete_step(t_id, p_idx)
                 msg_ok = "[bold green]🎉 Passo concluído![/bold green]"
                 console.print(msg_ok)
-                
+
                 # Chamada da API motivacional
                 frase = obter_frase_motivacional()
                 console.print(f"[italic yellow]{frase}[/italic yellow]\n")
-                
+
             except (ValueError, KeyError, IndexError) as e:
                 console.print(f"[bold red]❌ Erro: {e}[/bold red]\n")
 
