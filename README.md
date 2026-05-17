@@ -2,7 +2,7 @@
 
 ![Demonstração do MicroPassos](demo.gif)
 
-![Versão](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Versão](https://img.shields.io/badge/version-1.1.0-blue.svg)
 ![Status](https://img.shields.io/badge/status-concluído-brightgreen.svg)
 
 ## O Problema
@@ -20,14 +20,21 @@ O MicroPassos é uma aplicação de Linha de Comando (CLI) desenvolvida para fac
 - Adicionar tarefas divididas em micro-passos;
 - Visualizar o progresso em percentagem (%);
 - Concluir micro-passos individualmente;
+- **Receber frases motivacionais ao concluir um micro-passo (Integração com API Externa);**
 - Armazenamento local leve via ficheiro JSON.
 
 ## Tecnologias Utilizadas
 - **Python 3** (Linguagem base)
+- **Requests** (Consumo da API pública)
 - **JSON** (Armazenamento de dados nativo)
-- **Pytest** (Testes automatizados)
+- **Pytest** (Testes automatizados e de Integração)
 - **Flake8** (Linting / Análise estática)
 - **GitHub Actions** (Integração Contínua - CI)
+
+---
+
+## 🚀 Sobre o Deploy (Entrega Intermediária)
+Conforme as orientações do Bootcamp para aplicações puramente CLI (Linha de Comando), o "deploy" desta etapa consiste na documentação completa de execução. O passo a passo detalhado de como clonar, instalar e rodar o projeto localmente encontra-se logo abaixo.
 
 ---
 
