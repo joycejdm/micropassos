@@ -1,4 +1,5 @@
 from src.tracker import TaskTracker
+from src.api import obter_frase_motivacional
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
@@ -72,8 +73,13 @@ def main():
                 p_idx = int(console.input(txt_passo))
 
                 tracker.complete_step(t_id, p_idx)
-                msg_ok = "[bold green]🎉 Passo concluído![/bold green]\n"
+                msg_ok = "[bold green]🎉 Passo concluído![/bold green]"
                 console.print(msg_ok)
+                
+                # Chamada da API motivacional
+                frase = obter_frase_motivacional()
+                console.print(f"[italic yellow]{frase}[/italic yellow]\n")
+                
             except (ValueError, KeyError, IndexError) as e:
                 console.print(f"[bold red]❌ Erro: {e}[/bold red]\n")
 
